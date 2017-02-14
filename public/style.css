@@ -1,3 +1,12 @@
 body{
 font-family: 'Titillium Web', sans-serif;
 }
+
+.mainContent{
+    padding:20px;
+}
+
+.sidebarClass{
+    width:10%;
+    padding:10px;
+}
