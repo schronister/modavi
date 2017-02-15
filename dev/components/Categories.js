@@ -1,11 +1,15 @@
 // Include React
 var React = require("react");
 
-class ArticleList extends React.Component {
+class Categories extends React.Component {
+    constructor(props) {
+    super(props);
+    }
+
     render(){
         return(
             <div>
-                <h3>Latest Articles</h3>
+                <h3>Categories</h3>
 
             </div>
         )
@@ -13,4 +17,4 @@ class ArticleList extends React.Component {
 }
 
 // Export the component back for use in other files
-module.exports = ArticleList;
+module.exports = Categories;

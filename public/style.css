@@ -1,12 +1,33 @@
 body{
 font-family: 'Titillium Web', sans-serif;
+background-color: #311b92;
+color:white;
 }
 
-.mainContent{
-    padding:20px;
+.navbar{
+    width:100%;
 }
 
 .sidebarClass{
-    width:10%;
-    padding:10px;
+    background-color:#7c4dff;
+}
+
+#logo{
+    padding-left:20px;
+}
+
+.categories{
+    padding:10px 20px;
+}
+
+.submitForm{
+    padding:5px;
+    color:white;
+    background-color:#7c4dff;
+}
+
+.submitFormContainer{
+    color:white;
+    background-color:#7c4dff;
+    border-radius: 5px;
 }

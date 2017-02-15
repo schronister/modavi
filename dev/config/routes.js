@@ -15,13 +15,19 @@ var IndexRoute = router.IndexRoute;
 
 // Reference the high-level components
 var Main = require("../components/Main");
-var ArticleList = require("../components/ArticleList")
+var ArticleList = require("../components/ArticleList");
+var Login = require("../components/Login");
+var Submit = require("../components/Submit");
+var Categories = require("../components/Categories");
 
 
 // Export the Routes
 const routes = (
     <Route path="/" component={Main}>
         <Route path="articles" component={ArticleList}/>
+        <Route path="submit" component={Submit}/>
+        <Route path="categories" component={Categories}/>
+        <Route path="login" component={Login}/>
     </Route>
 )
 
