@@ -30,7 +30,37 @@ module.exports = function(app){
     	})
     })
 
-    //user authentication
+    //user creation
+    app.post("/api/user", function(req,res){
+        console.log("creating a new user")
+        var newUser = new User({name:req.body.name, username:req.body.username, password:req.body.password})
+        newUser.save(function(err,doc){
+        if (err) throw err;
+        res.send({doc});
+      })
+    })
+
+    //user login
+    app.post("/api/login", function(req,res){
+        User.findOne({username:req.body.username}, function(err, user){
+            if (err) throw err;
+            console.log(user);
+            if (user){
+               user.comparePassword(req.body.password, function(err, isMatch){
+                if (isMatch){
+                    res.json(user);
+                } else{
+                    res.sendStatus(401);
+                }
+            }) 
+            } else{
+                res.sendStatus(401);
+            }
+            
+
+            
+        })
+    })
     
 
 

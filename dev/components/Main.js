@@ -13,6 +13,8 @@ class Main extends React.Component {
       transitions: true,
       currentUser:""
     };
+
+    this.setUser = this.setUser.bind(this);
     }
 
     toggleSidebarDock() {
@@ -38,6 +40,10 @@ class Main extends React.Component {
     mediaQueryChanged() {
     this.setState({docked: this.state.mql.matches});
     this.setState({open: this.state.docked});
+    }
+
+    setUser(username){
+        this.setState({currentUser:username});
     }
 
 
@@ -74,7 +80,7 @@ class Main extends React.Component {
                         <ul id="nav-mobile" className="right hide-on-med-and-down">
                             <li><Link to="/articles">Latest Articles</Link></li>
                             <li><Link to="/submit">Submit Content</Link></li>
-                            <li><Link to="/login">Register/Login</Link></li>
+                            {this.state.currentUser==="" ? <li><Link to="/login">Register/Login</Link></li> : <li><Link to="/">{this.state.currentUser}</Link></li>}
                         </ul>
                         <ul className="side-nav" id="mobile-demo">
                             <li><Link to="/categories">Browse Categories</Link></li>
@@ -85,7 +91,7 @@ class Main extends React.Component {
                     </div>
                   </nav>
                 <div className="mainContent container">
-                 {this.props.children && React.cloneElement(this.props.children, {currentUser:this.state.currentUser})}
+                 {this.props.children && React.cloneElement(this.props.children, {currentUser:this.state.currentUser, setUser:this.setUser})}
                 </div>
                 </Sidebar>
                 

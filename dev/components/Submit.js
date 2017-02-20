@@ -2,7 +2,7 @@
 var React = require("react");
 import submit from "../helpers/submit";
 
-class Login extends React.Component {
+class Submit extends React.Component {
     constructor(props) {
     super(props);
 
@@ -58,4 +58,4 @@ class Login extends React.Component {
 }
 
 // Export the component back for use in other files
-module.exports = Login;
+module.exports = Submit;

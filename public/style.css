@@ -31,3 +31,8 @@ color:white;
     background-color:#7c4dff;
     border-radius: 5px;
 }
+
+.loginError {
+    background-color:#f44336;
+    width:100%;
+}

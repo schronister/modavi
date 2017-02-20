@@ -3,8 +3,8 @@ var mongoose = require("mongoose");
 // Create Schema class
 var Schema = mongoose.Schema;
 
-var bcrypt = require(bcrypt),
-var SALT_WORK_FACTOR = 10;
+var bcrypt = require("bcryptjs"),
+    SALT_WORK_FACTOR = 10;
 
 // Create article schema
 var UserSchema = new Schema({
@@ -14,7 +14,7 @@ var UserSchema = new Schema({
   points:{type: Number, default:0, required:true}
 });
 
-UserSchema.pre(save, function(next) {
+UserSchema.pre('save', function(next) {
     var user = this;
 
     // only hash the password if it has been modified (or is new)
